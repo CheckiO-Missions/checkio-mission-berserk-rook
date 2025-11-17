@@ -1,0 +1,75 @@
+<div class="for_info_only" style="text-align: center">
+    <img src="{{MEDIA_CONVERT}}title.png" style="max-height: 350px">
+</div>
+<p>
+    Comme vous le savez peut-être, <a href="http://en.wikipedia.org/wiki/Chess">chess</a>
+    est un jeu ancien dont presque tout le monde connaît au moins les règles de base.
+    Les échecs sont un jeu de stratégie à deux joueurs qui se joue sur un plateau de jeu à carreaux disposé en huit rangées
+    (appelées rangées et désignées par les chiffres 1 à 8) et huit colonnes (appelées files et désignées par les lettres a à h) de cases
+    de cases.
+    Chaque case de l'échiquier est identifiée par une paire de coordonnées unique -
+    une lettre et un chiffre (par exemple, "a1", "h8", "d6").
+
+</p>
+
+
+<p>
+    Pour cette mission, nous allons nous intéresser aux tours,
+    une unité de choc dangereuse qui peut être utilisée pour une poussée rapide ou pour une défense dense.
+    La tour se déplace horizontalement ou verticalement, à travers un nombre quelconque de cases inoccupées,
+    mais ne peut pas sauter par-dessus d'autres pièces.
+    Comme pour la capture à l'aide de toute autre unité, la tour capture en occupant la case sur laquelle se trouve la pièce ennemie ciblée.
+</p>
+<p>
+    Pour cette mission, vous disposez d'une tour berserk qui affronte une armée de tours ennemies.
+    La tour berserk ne peut se déplacer que si elle capture une unité ennemie.
+    Ainsi, à chaque tour, elle se déplacera et capturera jusqu'à ce qu'il n'y ait plus de cibles ennemies
+    où elle fera un pas "vide" et s'arrêtera.
+</p>
+<p>
+    On vous donne la position de votre tour berserk et celle des tours ennemies.
+    Votre objectif est de capturer autant d'unités que possible sans vous arrêter.
+    Chaque mouvement de votre séquence doit capturer une unité ennemie.
+    Le résultat sera le plus grand nombre possible de tours ennemies capturées.
+</p>
+
+<p style="text-align: center;">
+    <img class="for_info_only" title="rooks" src="{{MEDIA}}rooks.png" alt="rooks" style="max-height: 300px" />
+</p>
+
+<p>
+   <strong>Entrée: </strong>
+    Deux arguments. La position de la tour Berserk sous forme de chaîne de caractères et la position des tours ennemies sous forme d'un ensemble de chaînes de caractères.
+</p>
+
+<p>
+   <strong>Résultat: </strong> Le nombre maximum possible de tours ennemies capturées, sous la forme d'un entier.
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Exemple:</strong>
+    </p>
+    <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+berserkRook('d3', ['d6', 'b6', 'c8', 'g4', 'b8', 'g6']) == 5
+berserkRook('a2', ['f6', 'f2', 'a6', 'f8', 'h8', 'h6']) == 6
+berserkRook('a2', ['f6', 'f8', 'f2', 'a6', 'h6']) == 4
+{% else %}
+berserk_rook(u'd3', {u'd6', u'b6', u'c8', u'g4', u'b8', u'g6'}) == 5
+berserk_rook(u'a2', {u'f6', u'f2', u'a6', u'f8', u'h8', u'h6'}) == 6
+berserk_rook(u'a2', {u'f6', u'f8', u'f2', u'a6', u'h6'}) == 4
+{% endif %}</pre>
+</div>
+
+<p class="for_info_only">
+   <strong>Comment l'utiliser: </strong>
+    Aux échecs et dans presque tous les autres jeux, il est important de penser plusieurs fois à l'avance.
+    Nous avons créé ici une situation simple illustrant ce concept.
+    L'idée de base est de réfléchir aux problèmes d'optimisation à l'aide de modèles.
+</p>
+
+<p>
+   <strong>Condition préalable:</strong><br>
+    0 &lt; ennemis &le; 8
+</p>
