@@ -1,0 +1,75 @@
+<div class="for_info_only" style="text-align: center">
+    <img src="{{MEDIA_CONVERT}}title.png" style="max-height: 350px">
+</div>
+<p>
+    大家可能都知道<a href="http://en.wikipedia.org/wiki/Chess">chess</a>
+    是一种古老的游戏，几乎每个人都至少对其规则有基本的了解。
+    国际象棋是一种双人策略游戏，游戏在棋盘上进行，棋盘分为八行（称为行，用数字 1 至 8 表示）和八列（称为列，用字母 a 至 h 表示）。
+    行（称为行列，用数字 1 至 8 表示）和八列（称为列，用字母 a 至 h 表示）。
+    方格。
+    棋盘上的每个方格都由一对独特的坐标来标识，即
+    一个字母和一个数字（例如，"a1"、"h8"、"d6"）。
+
+</p>
+
+
+<p>
+    这次任务让我们来看看车、
+    车是一种危险的冲击单位，可用于快速推进或密集防守。
+    车可以横向或纵向移动，穿过任意数量的空位、
+    但不能跃过其他棋子。
+    与使用其他单位吃子一样，车要占领目标敌方棋子所在的方格才能吃子。
+</p>
+<p>
+    在这个任务中，你有一只 "狂暴之车 "来对抗敌方的 "车 "大军。
+    只有在能吃掉敌方单位的情况下，"狂暴之车 "才能移动。
+    因此，在每个回合中，它都会移动并俘虏敌军，直到没有敌军目标为止。
+    它就会走一步 "空 "步，然后停下来。
+</p>
+<p>
+    你会得到你的 "狂暴之车 "的位置和敌方 "车 "的位置。
+    您的目标是在不停步的情况下尽可能多地吃掉敌人的单位。
+    你的每一步棋都要吃掉一个敌方单位。
+    结果将是尽可能多地吃掉敌方车。
+</p>
+
+<p style="text-align: center;">
+    <img class="for_info_only" title="rooks" src="{{MEDIA}}rooks.png" alt="rooks" style="max-height: 300px" />
+</p>
+
+<p>
+   <strong>输入 </strong>
+    两个参数。狂暴车的位置（字符串）和敌方车的位置（字符串）。
+</p>
+
+<p>
+   <strong>输出： </strong> 捕获敌方车的最大可能数量（整数）。
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>举例说明</strong>
+    </p>
+    <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+berserkRook('d3', ['d6', 'b6', 'c8', 'g4', 'b8', 'g6']) == 5
+berserkRook('a2', ['f6', 'f2', 'a6', 'f8', 'h8', 'h6']) == 6
+berserkRook('a2', ['f6', 'f8', 'f2', 'a6', 'h6']) == 4
+{% else %}
+berserk_rook(u'd3', {u'd6', u'b6', u'c8', u'g4', u'b8', u'g6'}) == 5
+berserk_rook(u'a2', {u'f6', u'f2', u'a6', u'f8', u'h8', u'h6'}) == 6
+berserk_rook(u'a2', {u'f6', u'f8', u'f2', u'a6', u'h6'}) == 4
+{% endif %}</pre>
+</div>
+
+<p class="for_info_only">
+   <strong>如何使用 </strong>
+    对于国际象棋和几乎任何其他棋局来说，向前多想几步都是很重要的。
+    在这里，我们创造了一个简单的情境来说明这一概念。
+    基本思路是利用模型来思考优化问题。
+</p>
+
+<p>
+   <strong>先决条件</strong><br>
+    0 &lt; 敌人 &le; 8
+</p>
