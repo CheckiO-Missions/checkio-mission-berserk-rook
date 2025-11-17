@@ -1,0 +1,75 @@
+<div class="for_info_only" style="text-align: center">
+    <img src="{{MEDIA_CONVERT}}title.png" style="max-height: 350px">
+</div>
+<p>
+    Jak być może Państwo wiedzą, <a href="http://en.wikipedia.org/wiki/Chess">chess</a>
+    to starożytna gra, której zasady prawie każdy zna przynajmniej w podstawowym stopniu.
+    Szachy to dwuosobowa gra strategiczna rozgrywana na szachownicy ułożonej w ośmiu rzędach
+    (zwanych szeregami i oznaczonych cyframi od 1 do 8) i ośmiu kolumnach (zwanych polami i oznaczonych literami od a do h) kwadratów
+    kwadratów.
+    Każde pole szachownicy jest identyfikowane przez unikalną parę współrzędnych - literę i liczbę (np
+    literą i liczbą (np. "a1", "h8", "d6").
+
+</p>
+
+
+<p>
+    W tej misji przyjrzyjmy się wieżom,
+    niebezpiecznej jednostce uderzeniowej, która może być użyta do szybkiego ataku lub do gęstej obrony.
+    Wieża porusza się poziomo lub pionowo przez dowolną liczbę niezajętych pól,
+    ale nie może przeskakiwać nad innymi figurami.
+    Podobnie jak w przypadku bicia dowolną inną jednostką, wieża przejmuje pole, na którym znajduje się bierka przeciwnika.
+</p>
+<p>
+    W tej misji mają Państwo do dyspozycji jedną wieżę berserków, która walczy z armią wrogich wież.
+    Wieża berserków może się poruszyć tylko wtedy, gdy przejmie wrogą jednostkę.
+    Tak więc w każdej turze będzie się poruszać i przejmować, aż nie pozostaną żadne wrogie cele
+    po czym wykona jeden "pusty" krok i zatrzyma się.
+</p>
+<p>
+    Gracz otrzymuje pozycję swojej wieży berserków oraz pozycje wież przeciwnika.
+    Celem gracza jest przejęcie jak największej liczby jednostek bez zatrzymywania się.
+    Każdy ruch w sekwencji powinien zbić jednostkę przeciwnika.
+    Wynikiem będzie maksymalna możliwa liczba przejętych gawronów przeciwnika.
+</p>
+
+<p style="text-align: center;">
+    <img class="for_info_only" title="rooks" src="{{MEDIA}}rooks.png" alt="rooks" style="max-height: 300px" />
+</p>
+
+<p>
+   <strong>Dane wejściowe: </strong>
+    Dwa argumenty. Pozycja wieży Berserka jako ciąg znaków i pozycja wieży przeciwnika jako zbiór ciągów znaków.
+</p>
+
+<p>
+   <strong>Dane wyjściowe: </strong> Maksymalna możliwa liczba przejętych wież przeciwnika jako liczba całkowita.
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Przykład:</strong>
+    </p>
+    <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+berserkRook('d3', ['d6', 'b6', 'c8', 'g4', 'b8', 'g6']) == 5
+berserkRook('a2', ['f6', 'f2', 'a6', 'f8', 'h8', 'h6']) == 6
+berserkRook('a2', ['f6', 'f8', 'f2', 'a6', 'h6']) == 4
+{% else %}
+berserk_rook(u'd3', {u'd6', u'b6', u'c8', u'g4', u'b8', u'g6'}) == 5
+berserk_rook(u'a2', {u'f6', u'f2', u'a6', u'f8', u'h8', u'h6'}) == 6
+berserk_rook(u'a2', {u'f6', u'f8', u'f2', u'a6', u'h6'}) == 4
+{% endif %}</pre>
+</div>
+
+<p class="for_info_only">
+   <strong>Jak to jest używane: </strong>
+    W szachach i prawie każdej innej grze ważne jest, aby myśleć kilka kroków do przodu.
+    Tutaj stworzyliśmy prostą sytuację ilustrującą tę koncepcję.
+    Podstawową ideą jest myślenie o problemach optymalizacyjnych za pomocą modeli.
+</p>
+
+<p>
+   <strong>Warunek wstępny:</strong><br>
+    0 &lt; wrogów &le; 8
+</p>
