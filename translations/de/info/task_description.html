@@ -1,0 +1,75 @@
+<div class="for_info_only" style="text-align: center">
+    <img src="{{MEDIA_CONVERT}}title.png" style="max-height: 350px">
+</div>
+<p>
+    Wie Sie vielleicht wissen, <a href="http://en.wikipedia.org/wiki/Chess">chess</a>
+    ein uraltes Spiel, von dem fast jeder zumindest ein Grundverständnis der Regeln hat.
+    Schach ist ein Strategiespiel für zwei Spieler, das auf einem schachbrettartigen Spielbrett gespielt wird, das in acht Reihen
+    (Ränge genannt und mit den Zahlen 1 bis 8 bezeichnet) und acht Spalten (Felder genannt und mit den Buchstaben a bis h bezeichnet)
+    feldern.
+    Jedes Feld des Schachbretts wird durch ein eindeutiges Koordinatenpaar identifiziert -
+    einem Buchstaben und einer Zahl (z.B. "a1", "h8", "d6").
+
+</p>
+
+
+<p>
+    Für diese Mission wollen wir uns die Türme ansehen,
+    eine gefährliche Schockeinheit, die für einen schnellen Vorstoß oder für eine dichte Verteidigung eingesetzt werden kann.
+    Der Turm bewegt sich horizontal oder vertikal durch eine beliebige Anzahl von unbesetzten Feldern,
+    darf aber nicht über andere Figuren springen.
+    Wie bei der Eroberung mit jeder anderen Einheit nimmt der Turm das Feld ein, auf dem sich die gegnerische Figur befindet.
+</p>
+<p>
+    In dieser Mission haben Sie einen Berserker-Turm, der gegen eine Armee von gegnerischen Türmen antritt.
+    Der Berserker-Turm kann sich nur bewegen, wenn er eine gegnerische Einheit erobert.
+    In jeder Runde wird er sich also bewegen und schlagen, bis keine feindlichen Ziele mehr vorhanden sind
+    übrig sind. Dann macht er einen "leeren" Schritt und hält an.
+</p>
+<p>
+    Sie erhalten die Position Ihres Berserker-Turms und die Positionen der gegnerischen Türme.
+    Ihr Ziel ist es, so viele Einheiten wie möglich zu schlagen, ohne anzuhalten.
+    Jeder Zug in Ihrer Sequenz sollte eine gegnerische Einheit schlagen.
+    Das Ergebnis ist die größtmögliche Anzahl an gefangenen gegnerischen Türmen.
+</p>
+
+<p style="text-align: center;">
+    <img class="for_info_only" title="rooks" src="{{MEDIA}}rooks.png" alt="rooks" style="max-height: 300px" />
+</p>
+
+<p>
+   <strong>Eingabe: </strong>
+    Zwei Argumente. Die Position des Berserker-Turms als String und die Positionen der gegnerischen Türme als eine Reihe von Strings.
+</p>
+
+<p>
+   <strong>Ausgabe: </strong> Die maximal mögliche Anzahl der gefangenen gegnerischen Türme als Ganzzahl.
+</p>
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Beispiel:</strong>
+    </p>
+    <pre class="brush: python">{% if interpreter.slug == "js-node" %}
+berserkRook('d3', ['d6', 'b6', 'c8', 'g4', 'b8', 'g6']) == 5
+berserkRook('a2', ['f6', 'f2', 'a6', 'f8', 'h8', 'h6']) == 6
+berserkRook('a2', ['f6', 'f8', 'f2', 'a6', 'h6']) == 4
+{% else %}
+berserk_rook(u'd3', {u'd6', u'b6', u'c8', u'g4', u'b8', u'g6'}) == 5
+berserk_rook(u'a2', {u'f6', u'f2', u'a6', u'f8', u'h8', u'h6'}) == 6
+berserk_rook(u'a2', {u'f6', u'f8', u'f2', u'a6', u'h6'}) == 4
+{% endif %}</pre>
+</div>
+
+<p class="for_info_only">
+   <strong>Wie es verwendet wird: </strong>
+    Beim Schach und bei fast allen anderen Spielen ist es wichtig, mehrere Schritte vorauszudenken.
+    Hier haben wir eine einfache Situation geschaffen, die dieses Konzept veranschaulicht.
+    Die Grundidee besteht darin, über Optimierungsprobleme anhand von Modellen nachzudenken.
+</p>
+
+<p>
+   <strong>Vorbedingung:</strong><br>
+    0 &lt; Feinde &le; 8
+</p>
